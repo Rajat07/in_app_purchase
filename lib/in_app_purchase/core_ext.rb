@@ -14,7 +14,12 @@ Hash.class_eval do
         req = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
         req.body = "#{@toSend}"
         req.content_type = 'application/json'
-        https.request(req)
+        response = https.request(req)
+        if response.code.eql? "200"
+            JSON.parse(response)
+        else
+            "Fail"
+        end
     end
 
 
@@ -30,7 +35,12 @@ Hash.class_eval do
         req = Net::HTTP::Post.new(uri.path, initheader = {'Content-Type' =>'application/json'})
         req.body = "#{@toSend}"
         req.content_type = 'application/json'
-        https.request(req)
+        response = https.request(req)
+        if response.code.eql? "200"
+            JSON.parse(response)
+        else
+            "Fail"
+        end
     end
 
 end

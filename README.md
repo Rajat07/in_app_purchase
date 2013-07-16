@@ -25,6 +25,7 @@ receipt-data and password.
 
 * checkSandboxReceipt is used to send receipt-data in sandboxing environment.
 * checkPurchaseReceipt is used to send receipt-data in production environment.
-* Response is Net::HTTP object. Obtain data by JSON parsing the response body.
+* Response is hash object containing the status of receipt.
+* In case of request failure, response is Fail.
 
 
