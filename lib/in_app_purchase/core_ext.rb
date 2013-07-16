@@ -16,7 +16,7 @@ Hash.class_eval do
         req.content_type = 'application/json'
         response = https.request(req)
         if response.code.eql? "200"
-            JSON.parse(response)
+            JSON.parse(response.body)
         else
             "Fail"
         end
@@ -37,7 +37,7 @@ Hash.class_eval do
         req.content_type = 'application/json'
         response = https.request(req)
         if response.code.eql? "200"
-            JSON.parse(response)
+            JSON.parse(response.body)
         else
             "Fail"
         end
